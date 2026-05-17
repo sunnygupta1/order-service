@@ -67,6 +67,40 @@
       "response": []
     },
     {
+      "name": "Get Order By Id",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/order/{{orderId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "order",
+            "{{orderId}}"
+          ]
+        },
+        "description": "Returns one order with user details from USER-SERVICE."
+      },
+      "response": []
+    },
+    {
       "name": "Actuator Health",
       "request": {
         "method": "GET",
@@ -95,6 +129,16 @@
     {
       "key": "baseUrl",
       "value": "http://localhost:8082",
+      "type": "string"
+    },
+    {
+      "key": "orderId",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "bearerToken",
+      "value": "paste-user-service-token-here",
       "type": "string"
     }
   ]
